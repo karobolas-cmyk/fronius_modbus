@@ -1,7 +1,7 @@
 {
     "domain": "fronius_modbus",
     "name": "Fronius Modbus",
-    "codeowners": ["@redpomodoro"],
+    "codeowners": ["@callifo"],
     "config_flow": true,
     "dependencies": [],
     "documentation": "https://github.com/redpomodoro/fronius_modbus/",
