@@ -73,8 +73,6 @@ class FroniusModbusNumber(FroniusModbusBaseEntity, NumberEntity):
     def state(self):
         """Return the state of the sensor."""
         if self._key in self._hub.data:
-            # Treat stored values as real Watts (or the unit you configured),
-            # no extra % → W scaling here.
             return self._hub.data[self._key]
         return None
 

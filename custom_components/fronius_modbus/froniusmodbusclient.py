@@ -720,14 +720,14 @@ class FroniusModbusClient(ExtModbusClient):
     async def set_grid_charge_mode(self):
         grid_charge_power = 0
         discharge_rate = grid_charge_power * -1
-        await self.change_settings(mode=2, charge_limit=100, discharge_limit=discharge_rate, grid_charge_power=grid_charge_power)
+        await self.change_settings(mode=1, charge_limit=100, discharge_limit=discharge_rate, grid_charge_power=grid_charge_power)
         self.storage_extended_control_mode = 4
         _LOGGER.info(f"Forced charging at {grid_charge_power}")
 
     async def set_grid_discharge_mode(self):
         grid_discharge_power = 0
         charge_rate = grid_discharge_power * -1
-        await self.change_settings(mode=1, charge_limit=charge_rate, discharge_limit=100, grid_discharge_power=grid_discharge_power)
+        await self.change_settings(mode=2, charge_limit=charge_rate, discharge_limit=100, grid_discharge_power=grid_discharge_power)
         self.storage_extended_control_mode = 5
         _LOGGER.info(f"Forced discharging to grid {grid_discharge_power}")
 
